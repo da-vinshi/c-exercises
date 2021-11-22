@@ -53,16 +53,14 @@ int ft_atoi(char *num)
 
 int main()
 {
-	char *num1 = "-1.23-4";
-	char *num2 = "--123";
+	char *num1 = "123-4";
+	char *num2 = "-123";
 
 	printf("num1: %s\n", num1);
 	printf("num2: %s\n", num2);
 
 	printf("\nft_atoi(num1): %d\n", ft_atoi(num1));
 	printf("ft_atoi(num2): %d\n", ft_atoi(num2));
-
-	// printf("integer overflow: %d", 2147483647);
 
 	return 0;
 }
