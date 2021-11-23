@@ -18,33 +18,22 @@ int ft_atoi(char *num)
 
 	while ((*num >= '0' && *num <= '9') || (n0 == '-'))
 	{
-		if (n0 == '-')
-			n0 = 'x';
+		if (n0 == '-') n0 = 'x';
+
 		len++;
 		num++;
 	}
-	// printf(">> len: %d\n", len);
-
+	
 	int pow = 1;
 	set_pow(len - 1, &pow);
 
-	int i = 0;
-	int j = 0;
-	while (i < len + j)
+	int i = sign < 0 ? 1 : 0;
+	int j = sign < 0 ? 1 : 0;
+
+	for (; i < len + j; i++)
 	{
-		if (sign < 0 && j == 0)
-		{
-			i++;
-			j++;
-		}
-		// printf("num2[%d] = %c\n", i, num2[i]);
-		// printf("pow = %d\n", pow);
-
-		res += pow * ((int)num2[i] - '0');
-		// printf(">> res = %d\n", res);
+		res += pow * ((int) num2[i] - '0');
 		pow /= 10;
-
-		i++;
 	}
 
 	return res * sign;
